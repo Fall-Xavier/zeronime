@@ -1,10 +1,8 @@
-"use client"
-
 import Link from "next/link"
-import { getKomikResponse } from "@/libs/api-libs.js"
 
-const Update = async () => {
-    const data = await getKomikResponse("https://kurokami-api.vercel.app/api/manhwa-new")
+export default async function Update() {
+    const response = await fetch("https://kurokami-api.vercel.app/api/manhwa-new")
+    const data = await response.json()
     return (
         <div className="p-2">
             <h1 className="text-xl font-semibold py-2">Update Terbaru</h1>
@@ -25,5 +23,3 @@ const Update = async () => {
         </div>
     )
 }
-
-export default Update
