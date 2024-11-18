@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.scroll-page {
+    width: 100%;
+    overflow-x: scroll;
+    scrollbar-color: transparent transparent;
+}
+    
+.scroll-page::-webkit-scrollbar {
+    display: none;
+}
+    
+.inner-shadow-bottom {
+    border-radius: 10px;
+    box-shadow: inset 0px -70px 20px -10px rgba(0, 0, 0, 0.8);
+}
+    
