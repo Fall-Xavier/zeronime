@@ -1,10 +1,10 @@
 "use client"
 import Link from "next/link"
+import { getKomikResponse } from "@/libs/api-libs.js"
 
 const Page = async ({ params }) => {
     const { slug } = params
-    const response = await fetch(`https://kurokami-api.vercel.app/api/chapter/${slug}`)
-    const data = await response.json()
+    const data = await getKomikResponse(`https://kurokami-api.vercel.app/api/chapter/${slug}`)
     
     return (
         <div className="">
