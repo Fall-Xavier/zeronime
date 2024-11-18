@@ -1,12 +1,11 @@
-"use client"
 import Link from "next/link"
 import { FaStar } from "react-icons/fa"
 import { FaReadme } from "react-icons/fa6"
-import { getKomikResponse } from "@/libs/api-libs.js"
 
-const Page = async ({ params }) => {
+export default async function Page({ params }) {
     const { slug } = params
-    const data = await getKomikResponse(`https://kurokami-api.vercel.app/api/manhwa-detail/${slug}`)
+    const response = await fetch(`https://kurokami-api.vercel.app/api/manhwa-detail/${slug}`)
+    const data = await response.json()
     const genre = data?.genres.map(genre => genre.genreName).join(", ")
     
     return (
@@ -67,5 +66,3 @@ const Page = async ({ params }) => {
     )
     
 }
-
-export default Page
