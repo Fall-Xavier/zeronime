@@ -24,7 +24,7 @@ export default async function Page({ params }) {
             </div>
             <div className="flex flex-col">
                 {data.images.map((image,index) => (
-                    <img className="w-full h-full" src={image} />
+                    <img className="w-full h-full" src={image} key={index} />
                 ))}
             </div>
             <div className="flex items-center justify-center gap-2 p-2">
